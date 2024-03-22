@@ -1,6 +1,7 @@
 # Import necessary modules
 import os
 import streamlit as st
+from dotenv import load_dotenv
 from langchain.llms import Replicate
 from langchain.document_loaders import PyPDFDirectoryLoader
 from langchain.chains import RetrievalQA, ConversationChain
@@ -10,9 +11,12 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
 
-# Set up Llama2 model
-REPLICATE_API_TOKEN = "r8_aARpJdbqdFixYHVQ9LvCvaoRA0Svg8j2Pw5W3"
-DATA_PATH = 'data'
+# Load the .env file
+load_dotenv()
+
+# Access the environment variable
+REPLICATE_API_TOKEN = os.getenv('REPLICATE_API_TOKEN')
+
 result = {}
 
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
