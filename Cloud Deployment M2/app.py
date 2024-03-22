@@ -16,6 +16,7 @@ load_dotenv()
 
 # Access the environment variable
 REPLICATE_API_TOKEN = os.getenv('REPLICATE_API_TOKEN')
+DATA_PATH = os.getenv('DATA_PATH')
 
 result = {}
 
